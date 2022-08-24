@@ -114,7 +114,7 @@
                     app:layout_constraintStart_toEndOf="@+id/textView8"
                     app:layout_constraintTop_toBottomOf="@+id/company_Tv" />
 
-                <!--    end of sub LinearLayout-->
+
                 <ImageView
                     android:id="@+id/shoe_Iv"
                     android:layout_width="100dp"
