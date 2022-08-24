@@ -41,7 +41,8 @@
 
         <action
             android:id="@+id/action_shoeListFragment_to_loginFragment2"
-            app:destination="@id/loginFragment2" />
+            app:destination="@id/loginFragment2"
+            app:popUpTo="@id/loginFragment2" />
         <action
             android:id="@+id/action_shoeListFragment_to_addShoeFragment2"
             app:destination="@id/addShoeFragment2" />

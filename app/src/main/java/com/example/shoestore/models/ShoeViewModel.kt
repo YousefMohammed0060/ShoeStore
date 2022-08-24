@@ -28,4 +28,5 @@ class ShoeViewModel : ViewModel() {
         Log.i("GameViewModel", "GameViewModel destroyed!")
     }
 
+
 }

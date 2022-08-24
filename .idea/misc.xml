@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Udacity Projects/Graduation Projects/ShoeStore/app/src/main/res/layout/add_shoe_row.xml" value="0.36666666666666664" />
         <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/drawable/ic_logout.xml" value="0.1" />
         <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/add_shoe_row.xml" value="0.5" />
+        <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/add_shoe_row.xml" value="0.4685185185185185" />
         <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/fragment_add_shoe.xml" value="0.1" />
         <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/fragment_instractions.xml" value="0.1" />
         <entry key="..\:/Udacity Projects/ShoeStore/app/src/main/res/layout/fragment_login.xml" value="0.1" />

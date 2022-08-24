@@ -2,6 +2,7 @@ package com.example.shoestore
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +15,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.shoestore.databinding.FragmentAddShoeBinding
 import com.example.shoestore.models.Shoe
 import com.example.shoestore.models.ShoeViewModel
+import java.net.URL
 
 
 class AddShoeFragment : Fragment() {
     lateinit var binding: FragmentAddShoeBinding
     private lateinit var viewModel: ShoeViewModel
-    var image = ""
+    var image=""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,7 +59,7 @@ class AddShoeFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 101 && resultCode == Activity.RESULT_OK) {
             binding.shoeImageView.setImageURI(data?.data)
-            image=data?.data.toString()
+            image= data?.data!!.toString()
         }
     }
 
