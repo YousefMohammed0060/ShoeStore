@@ -44,11 +44,10 @@ class ShoeListFragment : Fragment() {
         for (shoeItem in viewModel.list) {
             val itemsBinding: AddShoeRowBinding =
                 DataBindingUtil.inflate(inflater, R.layout.add_shoe_row, container, false)
-            itemsBinding.nameTv.append(shoeItem.name)
-            itemsBinding.companyTv.append(shoeItem.company)
-            itemsBinding.descriptionTv.append(shoeItem.description)
-            itemsBinding.sizeTv.append(shoeItem.size.toString())
+
+            itemsBinding.sizeTv.setText(shoeItem.size.toString())
             itemsBinding.shoeIv.setImageURI(Uri.parse(shoeItem.image))
+            itemsBinding.shoe = shoeItem
             itemsBinding.constraintView.setOnClickListener {
 
             }
