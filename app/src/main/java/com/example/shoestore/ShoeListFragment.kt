@@ -1,17 +1,19 @@
 package com.example.shoestore
 
-import android.net.Uri
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.shoestore.databinding.AddShoeRowBinding
 import com.example.shoestore.databinding.FragmentShoeListBinding
 import com.example.shoestore.models.ShoeViewModel
+
 
 class ShoeListFragment : Fragment() {
 
@@ -43,9 +45,7 @@ class ShoeListFragment : Fragment() {
         for (shoeItem in viewModel.list) {
             val itemsBinding: AddShoeRowBinding =
                 DataBindingUtil.inflate(inflater, R.layout.add_shoe_row, container, false)
-
-            itemsBinding.sizeTv.setText(shoeItem.size.toString())
-            itemsBinding.shoeIv.setImageURI(Uri.parse(shoeItem.image))
+            itemsBinding.shoeIv.setImageBitmap(shoeItem.image)
             itemsBinding.shoe = shoeItem
             itemsBinding.constraintView.setOnClickListener {
 
