@@ -18,10 +18,7 @@ import com.example.shoestore.models.ShoeViewModel
 class ShoeListFragment : Fragment() {
 
     private var _binding: FragmentShoeListBinding? = null
-    //private val noteDatabase by lazy { ToDoDatabase.getInstance(requireContext()).todoDataBaseDao }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var viewModel: ShoeViewModel

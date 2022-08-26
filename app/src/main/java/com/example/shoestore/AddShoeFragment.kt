@@ -35,9 +35,8 @@ class AddShoeFragment : Fragment() {
             var name = binding.shoeNameText.text.toString()
             var company = binding.shoeCompanyText.text.toString()
             var description = binding.shoeDescriptionText.text.toString()
-            var size_str = binding.shoeSizeText.text.toString()
-            if (name!="" && size_str!="" && company!="" && description!="" && bitmap!=null ){
-                var size = size_str.toDouble()
+            var size = binding.shoeSizeText.text.toString()
+            if (name!="" && size!="" && company!="" && description!="" && bitmap!=null ){
                 var shoe = Shoe(name, size, company, description, bitmap)
                 viewModel.addNewShoe(shoe)
                 findNavController().navigate(AddShoeFragmentDirections.actionAddShoeFragment2ToShoeListFragment())
