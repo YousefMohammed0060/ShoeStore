@@ -22,8 +22,7 @@ import com.example.shoestore.models.ShoeViewModel
 class AddShoeFragment : Fragment() {
     lateinit var binding: FragmentAddShoeBinding
     private lateinit var viewModel: ShoeViewModel
-    lateinit var image:Uri
-    lateinit var bitmap:Bitmap
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,33 +35,16 @@ class AddShoeFragment : Fragment() {
             var company = binding.shoeCompanyText.text.toString()
             var description = binding.shoeDescriptionText.text.toString()
             var size = binding.shoeSizeText.text.toString()
-            if (name!="" && size!="" && company!="" && description!="" && bitmap!=null ){
-                var shoe = Shoe(name, size, company, description, bitmap)
+            if (name!="" && size!="" && company!="" && description!="" ){
+                var shoe = Shoe(name, size, company, description)
                 viewModel.addNewShoe(shoe)
                 findNavController().navigate(AddShoeFragmentDirections.actionAddShoeFragment2ToShoeListFragment())
             }
         }
 
-        binding.shoeImageView.setOnClickListener{
-            pickImage()
-        }
 
         return binding.root
     }
 
-    fun pickImage() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        startActivityForResult(intent, 101)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 101 && resultCode == Activity.RESULT_OK) {
-            binding.shoeImageView.setImageURI(data?.data)
-            image = data?.data!!
-            bitmap= MediaStore.Images.Media.getBitmap(context?.contentResolver,image)
-        }
-    }
 
 }

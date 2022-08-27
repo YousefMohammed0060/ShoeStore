@@ -73,16 +73,6 @@
             app:layout_constraintStart_toStartOf="@+id/shoeCompany_text"
             app:layout_constraintTop_toBottomOf="@+id/shoeCompany_text" />
 
-        <ImageView
-            android:id="@+id/shoe_imageView"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoeDescription_text"
-            android:src="@drawable/shoe" />
-
         <Button
             android:id="@+id/save_btn"
             android:layout_width="wrap_content"
@@ -91,8 +81,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_imageView"
-            app:layout_constraintVertical_bias="0.68" />
+            app:layout_constraintTop_toBottomOf="@+id/shoeDescription_text"
+            app:layout_constraintVertical_bias="0.16000003" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -42,7 +42,6 @@ class ShoeListFragment : Fragment() {
         for (shoeItem in viewModel.list) {
             val itemsBinding: AddShoeRowBinding =
                 DataBindingUtil.inflate(inflater, R.layout.add_shoe_row, container, false)
-            itemsBinding.shoeIv.setImageBitmap(shoeItem.image)
             itemsBinding.shoe = shoeItem
             itemsBinding.constraintView.setOnClickListener {
 
