@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.shoestore.databinding.FragmentAddShoeBinding
+import com.example.shoestore.models.Hints
 import com.example.shoestore.models.Shoe
 import com.example.shoestore.models.ShoeViewModel
 
@@ -29,8 +30,10 @@ class AddShoeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_shoe, container, false)
         viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
-        binding.saveBtn.setOnClickListener {
 
+        binding.hints = Hints()
+
+        binding.saveBtn.setOnClickListener {
             var name = binding.shoeNameText.text.toString()
             var company = binding.shoeCompanyText.text.toString()
             var description = binding.shoeDescriptionText.text.toString()
