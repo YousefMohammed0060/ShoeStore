@@ -66,6 +66,10 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment3"
+            app:destination="@id/shoeDetailsFragment3"
+            app:popUpTo="@id/shoeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/addShoeFragment2"
@@ -77,8 +81,25 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/instractionsFragment" />
 
 
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailsFragment3"
+        android:name="com.example.shoestore.ShoeDetailsFragment"
+        android:label="ShoeDetailsFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument android:name="size"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="company"
+            app:argType="string" />
     </fragment>
 </navigation>

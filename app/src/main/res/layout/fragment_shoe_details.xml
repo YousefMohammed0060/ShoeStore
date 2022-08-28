@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    data loading-->
+    <data>
+
+        <variable
+            name="Shoe"
+            type="com.example.shoestore.models.Shoe" />
+
+    </data>
+    <!--    main layout-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--   LinearLayout to manage views-->
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/shoeNameDetail_text"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="@={Shoe.name}"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toTopOf="@+id/shoeCompanyDetail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/shoeSizeDetail_text"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="@={Shoe.size}"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/shoeCompanyDetail_text"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:text="@={Shoe.company}"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+        <EditText
+            android:id="@+id/shoeDescriptionDetail_text"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:text="@={Shoe.description}"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/shoeCompanyDetail_text"
+            app:layout_constraintStart_toStartOf="@+id/shoeCompanyDetail_text"
+            app:layout_constraintTop_toBottomOf="@+id/shoeCompanyDetail_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

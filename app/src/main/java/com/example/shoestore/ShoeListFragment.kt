@@ -44,10 +44,10 @@ class ShoeListFragment : Fragment() {
                 DataBindingUtil.inflate(inflater, R.layout.add_shoe_row, container, false)
             itemsBinding.shoe = shoeItem
             itemsBinding.constraintView.setOnClickListener {
-
+                findNavController().navigate(ShoeListFragmentDirections.
+                actionShoeListFragmentToShoeDetailsFragment3(shoeItem.name,shoeItem.size,shoeItem.description,shoeItem.company))
             }
             binding.parentLinearLayout.addView(itemsBinding.root)
-
         }
     }
 
