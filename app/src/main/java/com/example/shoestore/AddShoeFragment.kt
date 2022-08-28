@@ -10,6 +10,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -24,6 +25,7 @@ class AddShoeFragment : Fragment() {
     lateinit var binding: FragmentAddShoeBinding
     private lateinit var viewModel: ShoeViewModel
 
+    private var oldItem = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,22 +33,32 @@ class AddShoeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_shoe, container, false)
         viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
 
-        binding.hints = Hints()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.shoe = Shoe()
 
         binding.saveBtn.setOnClickListener {
-            var name = binding.shoeNameText.text.toString()
-            var company = binding.shoeCompanyText.text.toString()
-            var description = binding.shoeDescriptionText.text.toString()
-            var size = binding.shoeSizeText.text.toString()
+            var name = binding.shoe?.name  ?: ""
+            var company = binding.shoe?.company ?: ""
+            var description = binding.shoe?.description ?: ""
+            var size = binding.shoe?.size ?: ""
             if (name!="" && size!="" && company!="" && description!="" ){
                 var shoe = Shoe(name, size, company, description)
                 viewModel.addNewShoe(shoe)
                 findNavController().navigate(AddShoeFragmentDirections.actionAddShoeFragment2ToShoeListFragment())
+            }else{
+                Toast.makeText(
+                    context,
+                    "Shoe is Empty",
+                    Toast.LENGTH_LONG
+                )
+                    .show()
             }
         }
-
-
-        return binding.root
     }
 
 
